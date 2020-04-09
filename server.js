@@ -47,27 +47,7 @@ app.put("/api/workouts/:id", (req, res) => {
     .then((response) => { res.json(response) })
     .catch((err) => {
       console.log(err)
-    })
-  // let workoutId = req.params.id;
-  // let savedExercises = [];
-  // db.Workout.find({ _id: workoutId })
-  //   .then(dbWorkout => {
-  //     savedExercises = dbWorkout[0].exercises;
-  //     res.json(dbWorkout[0].exercises);
-  //     let allExercises = [...savedExercises, body]
-  //     console.log(allExercises)
-  //     updateWorkout(allExercises)
-  //   })
-  //   
-  // function updateWorkout(exercises) {
-  //   db.Workout.findByIdAndUpdate(workoutId, { exercises: exercises }, function (err, doc) {
-  //     if (err) {
-  //       console.log(err)
-  //     }
-
-  //   })
-  // }
-        
+    })  
 });
 app.get("/api/workouts/range", (req, res) => {
   db.Workout.find({})
