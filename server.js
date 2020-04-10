@@ -2,8 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
-const MONGODB_URI = (process.env.MONGODB_URI || "mongodb://user1:a12345@ds061757.mlab.com:61757/heroku_x8fr1kzt", { useNewUrlParser: true });
-
+const db = require("./models");
 
 const PORT = process.env.PORT || 3000;
 
@@ -14,9 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:a12345@ds061757.mlab.com:61757/heroku_x8fr1kzt");
 
-const db = require("./models");
+
 
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"));
