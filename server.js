@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:a12345@ds061757.mlab.com:61757/heroku_x8fr1kzt");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:a12345@ds061757.mlab.com:61757/heroku_x8fr1kzt", { useNewUrlParser: true });
 
 
 

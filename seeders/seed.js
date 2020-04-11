@@ -1,10 +1,10 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:a12345@ds061757.mlab.com:61757/heroku_x8fr1kzt", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://user1:a12345@ds061757.mlab.com:61757/heroku_x8fr1kzt",
+    { useNewUrlParser: true }
+  );
 
 let workoutSeed = [
   {
